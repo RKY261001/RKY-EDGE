@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RKY EDGE DISTRIBUTION</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='Style.css') }}">
+</head>
+
+<body>
+  <!-- Header-Top -->
+  <div class="top-bar">
+    <div class="left">
+      <span>
+        <a href="rkyedge@gmail.com">
+          <img src="{{ url_for('static', filename='mail.png') }}" alt="Email">
+          rkyedge@gmail.com
+        </a>
+      </span>
+      <span>
+        <a href="tel:+919415151349">
+          <img src="{{ url_for('static', filename='call.png') }}" alt="Call">
+          +91 8299223935 / 9415151349
+        </a>
+      </span>
+    </div>
+    <div class="right">
+      <a href="https://facebook.com" target="_blank">
+        <img src="{{ url_for('static', filename='facebook.png') }}" alt="Facebook">
+      </a>
+      <a href="https://youtube.com" target="_blank">
+        <img src="{{ url_for('static', filename='youtube.png') }}" alt="YouTube">
+      </a>
+      <a href="https://instagram.com" target="_blank">
+        <img src="{{ url_for('static', filename='instagram.png') }}" alt="Instagram">
+      </a>
+      <div class="whatsapp-btn-wrapper">
+        <a href="https://wa.me/{{ 8299223935 }}" target="_blank" rel="noopener"
+          aria-label="Chat with us on WhatsApp" class="whatsapp-btn">
+          <img src="{{ url_for('static', filename='whatsapp-icon.png') }}" alt="WhatsApp Icon"
+            class="whatsapp-icon-img">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="https://RKY EDGE DISTRIBUTION/images/logo.png" alt="Logo">
+      <div>
+        <span>RKY EDGE DISTRIBUTION PVT. LTD</span><br>
+        <small class="tagline">AMFI Regd. Mutual Fund Distributor</small>
+      </div>
+    </div>
+
+    <ul class="menu">
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('about') }}">About Us</a></li>
+      <li class="dropdown">
+        <a href="#">Products ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Mutual Funds & SIP</a></li>
+          <li><a href="#">Insurance</a></li>
+          <li><a href="#">Other Products</a></li>
+        </ul>
+      </li>
+      <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+      <li><a href="#">Download</a></li>
+      <li><a href="#">Disclosure</a></li>
+    </ul>
+    <div class="buttons">
+      <a href="#" class="btn signup">Sign Up</a>
+      <a href="#" class="btn login">Login</a>
+    </div>
+  </nav>
+
+  <!-- Slider -->
+  <main>
+    <div class="slider">
+      <div class="slides">
+        <div class="slide">
+          <img src="{{ url_for('static', filename='Systematic.jpg') }}" alt="Slide 1">
+          <div class="content">
+            <h2>Achieve ambitious financial goals</h2>
+            <p>A strategic investment roadmap tailored for you & your family.</p>
+            <button>Get Started</button>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="{{ url_for('static', filename='SIP-FD.jpg') }}" alt="Slide 2">
+          <div class="content">
+            <h2>Secure Your Future</h2>
+            <p>Plan today with SIPs for tomorrow’s financial freedom.</p>
+            <button>Learn More</button>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="{{ url_for('static', filename='OIP.jpg') }}" alt="Slide 3">
+          <div class="content">
+            <h2>Protect What Matters</h2>
+            <p>Comprehensive insurance solutions for peace of mind.</p>
+            <button>Explore</button>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="{{ url_for('static', filename='Mutual-Funds.webp') }}" alt="Slide 4">
+          <div class="content">
+            <h2>Smart Investments</h2>
+            <p>Grow your wealth with trusted mutual fund options.</p>
+            <button>Contact Us</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Arrows -->
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+
+      <!-- Dots -->
+      <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </main>
+
+  <!-- Disclosure Section -->
+  <footer class="disclosure">
+    <p> Mutual Fund investments are subject to market risks. Read all scheme-related documents carefully before
+      investing.</p>
+  </footer>
+
+  <script>
+    let index = 0;
+    const slides = document.querySelector('.slides');
+    const dots = document.querySelectorAll('.dot');
+    const totalSlides = dots.length;
+
+    function showSlide(i) {
+      index = (i + totalSlides) % totalSlides;
+      slides.style.transform = `translateX(${-index * 100}%)`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[index].classList.add('active');
+    }
+
+    document.querySelector('.prev').addEventListener('click', () => showSlide(index - 1));
+    document.querySelector('.next').addEventListener('click', () => showSlide(index + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => showSlide(i)));
+
+    setInterval(() => showSlide(index + 1), 5000);
+  </script>
+</body>
+
+</html>
