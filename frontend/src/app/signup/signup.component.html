@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="signup.component.scss">
+</head>
+<body>
+
+  <!-- Sign Up Form -->
+  <div class="card signup-container">
+    <h2>Create Account</h2>
+    <form id="signupForm">
+      <input type="text" id="fullname" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+      <button type="submit">Sign Up</button>
+      <p class="error" id="errorMsg"></p>
+      <p class="switch">Already have an account? <a href="login">Login</a></p>
+    </form>
+  </div>
+
+  <script>
+  const form = document.getElementById("signupForm");
+  const errorMsg = document.getElementById("errorMsg");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const fullname = document.getElementById("fullname").value;
+    const email = document.getElementById("email").value;
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (password !== confirmPassword) {
+      errorMsg.textContent = "Passwords do not match!";
+      return;
+    }
+
+    // Backend ko request bhejna
+    fetch("http://localhost:5000/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        fullname,
+        email,
+        username,
+        password
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        alert("Account created successfully!");
+        window.location.href = "login.html";
+      } else {
+        errorMsg.textContent = data.message;
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      errorMsg.textContent = "Something went wrong!";
+    });
+  });
+</script>
+
+
+</body>
+</html>

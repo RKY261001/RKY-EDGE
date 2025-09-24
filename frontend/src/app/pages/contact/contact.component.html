@@ -1,19 +1,13 @@
+<app-slider></app-slider>
+
 <section class="content-section">
-  <h2>Contact Us</h2>
-  <p>Fill out the  below form to contact us</p>
-
-  <form class="contact-form" (ngSubmit)="submit()" #contactForm="ngForm">
-    <label for="name">Name:</label>
-    <input id="name" name="name" [(ngModel)]="model.name" required />
-
-    <label for="email">Email:</label>
-    <input id="email" name="email" type="email" [(ngModel)]="model.email" required />
-
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" rows="5" [(ngModel)]="model.message" required></textarea>
-
-    <button type="submit" [disabled]="contactForm.invalid">Send Message</button>
+  <h2>Contact Form</h2>
+  <form class="contact-form" (ngSubmit)="submitForm()" #f="ngForm">
+    <input type="text" placeholder="Name" [(ngModel)]="name" name="name" required>
+    <input type="email" placeholder="Email" [(ngModel)]="email" name="email" required>
+    <textarea placeholder="Message" [(ngModel)]="message" name="message" required></textarea>
+    <button type="submit" [disabled]="f.invalid">Send</button>
   </form>
 
-  <p *ngIf="status" class="flash">{{ status }}</p>
+  <p *ngIf="response" class="flash">{{ response }}</p>
 </section>

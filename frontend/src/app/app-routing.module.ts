@@ -1,26 +1,32 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-// Components import करो
+// Components import 
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { DownloadComponent } from './download/download.component';
 import { DisclosureComponent } from './disclosure/disclosure.component';
 import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 // Products
 import { MutualFundsComponent } from './mutual-funds/mutual-funds.component';
 import { InsuranceComponent } from './insurance/insurance.component';
 import { OtherProductsComponent } from './other-products/other-products.component';
+import {SliderComponent} from './shared/slider/slider.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },               // Home
+  { path: '', component: SliderComponent },
   { path: 'about', component: AboutComponent },         // About Us
   { path: 'contact', component: ContactComponent },     // Contact Us
   { path: 'download', component: DownloadComponent },   // Download
   { path: 'disclosure', component: DisclosureComponent }, // Disclosure
   { path: 'login', component: LoginComponent },         // Login
+  { path: '', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
 
   // Products
   { path: 'mutual-funds', component: MutualFundsComponent },

@@ -6,6 +6,6 @@ import { SliderComponent } from "../../shared/slider/slider.component";
   standalone: true,
   imports: [SliderComponent],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']   
+  styleUrls: ['./home.component.scss']   
 })
 export class HomeComponent {}

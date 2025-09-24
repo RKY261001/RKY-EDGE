@@ -63,6 +63,22 @@
   background: #56a130;
 }
 
+.slider-btn {
+  background: #6bb93f;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+.slider-btn:hover {
+  background: #56a130;
+}
+
+
 /* Navigation arrows */
 .prev,
 .next {

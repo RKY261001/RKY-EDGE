@@ -3,25 +3,32 @@ import { Component } from '@angular/core';
 // import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.scss']
 })
-export class LoginComponent {
+export class SignupComponent {
+  // fullname = '';
+  // email = '';
   // username = '';
   // password = '';
   // message = '';
 
   // constructor(private api: ApiService, private router: Router) {}
 
-  // onLogin() {
-  //   const userData = { username: this.username, password: this.password };
+  // onSignup() {
+  //   const userData = {
+  //     fullname: this.fullname,
+  //     email: this.email,
+  //     username: this.username,
+  //     password: this.password
+  //   };
 
-  //   this.api.login(userData).subscribe({
+  //   this.api.signup(userData).subscribe({
   //     next: (res) => {
   //       if (res.success) {
-  //         alert('Login successful!');
-  //         this.router.navigate(['/dashboard']);
+  //         alert('Account created successfully!');
+  //         this.router.navigate(['/login']);
   //       } else {
   //         this.message = res.message;
   //       }

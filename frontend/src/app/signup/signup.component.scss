@@ -15,60 +15,60 @@ body {
 
 /* Glassmorphism card effect */
 .card {
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
   background-color: rgba(20, 29, 52, 0.78);
-  border-radius: 16px;
+  border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 50px;
-  width: 420px;   /* increased width */
+  padding: 35px;       /* smaller padding */
+  width: 360px;        /* smaller width */
   color: #fff;
   text-align: center;
-  box-shadow: 0px 12px 30px rgba(0,0,0,0.3);
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.25);
 }
 
 /* Headline */
 .card h2 {
-  font-size: 28px;
-  margin-bottom: 25px;
+  font-size: 24px;     /* reduced font size */
+  margin-bottom: 20px;
   font-weight: bold;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 /* Input fields */
-.login-container input {
+.signup-container input {
   width: 100%;
-  padding: 16px;
-  margin: 14px 0;
+  padding: 12px;       /* smaller input height */
+  margin: 12px 0;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   outline: none;
   background: rgba(255,255,255,0.12);
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
 }
 
-.login-container input::placeholder {
+.signup-container input::placeholder {
   color: #ccc;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 /* Button */
-.login-container button {
+.signup-container button {
   width: 100%;
-  padding: 16px;
-  margin-top: 18px;
+  padding: 12px;       /* smaller button height */
+  margin-top: 14px;
   background: #3498db;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.login-container button:hover {
+.signup-container button:hover {
   background: #2980b9;
   transform: translateY(-2px);
 }
@@ -76,24 +76,25 @@ body {
 /* Error message */
 .error {
   color: #ff6b6b;
-  font-size: 15px;
-  margin-top: 12px;
+  font-size: 13px;     /* smaller error text */
+  margin-top: 10px;
 }
 
-
-.signup-option {
-  margin-top: 15px;
-  font-size: 14px;
-  color: #fff;
+/* Switch link */
+.switch {
+  margin-top: 14px;
+  font-size: 13px;
+  color: #ddd;
 }
 
-.signup-option a {
-  color: #4facfe;
+.switch a {
+  color: #1abc9c;
   text-decoration: none;
-  font-weight: 600;
-  margin-left: 5px;
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
 }
 
-.signup-option a:hover {
+.switch a:hover {
   text-decoration: underline;
 }

@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { HomeComponent } from './pages/home/home.component';
@@ -10,7 +12,6 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { DownloadComponent } from './download/download.component';
 import { DisclosureComponent } from './disclosure/disclosure.component';
-import { LoginComponent } from './login/login.component';
 import { MutualFundsComponent } from './mutual-funds/mutual-funds.component';
 import { InsuranceComponent } from './insurance/insurance.component';
 import { OtherProductsComponent } from './other-products/other-products.component';
@@ -20,9 +21,11 @@ import { TopbarComponent } from './shared/topbar/topbar.component';
 import { RouterModule } from '@angular/router';
 import { SliderComponent } from './shared/slider/slider.component';
 
+
+
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent, 
   ],
   imports: [
     BrowserModule,
@@ -34,16 +37,17 @@ import { SliderComponent } from './shared/slider/slider.component';
     HomeComponent,
     AboutComponent,
     ContactComponent,
+    FormsModule ,
     DownloadComponent,
     DisclosureComponent,
-    LoginComponent,
     MutualFundsComponent,
     InsuranceComponent,
     RouterModule,
+     HttpClientModule,
     OtherProductsComponent
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,]
 })
 export class AppModule { }
 

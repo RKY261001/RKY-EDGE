@@ -1,0 +1,54 @@
+/* Full page section */
+.content-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical center */
+  align-items: center;     /* horizontal center */
+  min-height: 100vh;       /* full viewport height */
+  padding: 20px;
+  background: #f5f5f5;     /* light background */
+}
+
+/* Form styling */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.contact-form button {
+  padding: 10px;
+  background: green;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+
+  &:disabled {
+    background: #999;
+    cursor: not-allowed;
+  }
+}
+
+/* Flash message */
+.flash {
+  margin-top: 15px;
+  color: green;
+  font-weight: bold;
+  font-size: 16px;
+}
