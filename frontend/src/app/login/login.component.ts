@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 // import { ApiService } from '../services/api.service';
 // import { Router } from '@angular/router';
+import { SliderComponent } from "../shared/slider/slider.component";
 
 @Component({
   selector: 'app-login',
+  standalone: true,
+  imports: [SliderComponent],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })

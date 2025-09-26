@@ -2,15 +2,15 @@
    NAVBAR
 ====================== */
 .navbar {
-  background: #04092ef1;
+  background: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 40px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  padding: 10px 30px;
+  // box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  // position: sticky;
+  // top: 0;
+  // z-index: 1000;
 }
 
 /* ======================
@@ -29,12 +29,12 @@
 .navbar .logo span {
   font-size: 22px;
   font-weight: bold;
-  color: #f6f5fa;
+  color: black;
 }
 
 .navbar .logo .tagline {
   font-size: 12px;
-  color: #9d9b9b;
+  color: #494747;
   font-style: italic;
 }
 
@@ -56,13 +56,13 @@
 .navbar .menu li a {
   text-decoration: none;
   font-size: 15px;
-  color: #f4f1f1;
+  color: black;
   font-weight: 500;
   transition: color 0.3s;
 }
 
 .navbar .menu li a:hover {
-  color: #1305b0;
+  color: orange;
 }
 
 /* ======================
@@ -73,7 +73,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: #04092ef1;
+  background: #f6f5fa;
   list-style: none;
   padding: 10px;
   border: 1px solid #ccc;
@@ -124,5 +124,5 @@
 }
 
 .login:hover {
-  background: #1305b0;
+  background: orange;
 }
